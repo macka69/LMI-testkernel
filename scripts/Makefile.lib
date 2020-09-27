@@ -253,7 +253,7 @@ cmd_gzip = (cat $(filter-out FORCE,$^) | gzip -n -f -9 > $@) || \
 
 # DTC
 # ---------------------------------------------------------------------------
-DTC ?= $(objtree)/scripts/dtc/dtc
+DTC = /usr/bin/dtc
 
 # Disable noisy checks by default
 ifeq ($(findstring 1,$(KBUILD_ENABLE_EXTRA_GCC_CHECKS)),)
@@ -314,11 +314,14 @@ $(obj)/%.dtb: $(src)/%.dts $(DTC) FORCE
 
 dtc-tmp = $(subst $(comma),_,$(dot-target).dts.tmp)
 
+<<<<<<< HEAD
 # mkdtimg
 #----------------------------------------------------------------------------
 quiet_cmd_mkdtimg = DTBOIMG $@
 cmd_mkdtimg = $(srctree)/prebuilt/mkdtimg create $@ --page_size=4096 $(filter-out FORCE,$^)
 
+=======
+>>>>>>> parent of 65d8ed5c1455... dtbo.img: build device tree overlay partition image
 # cat
 # ---------------------------------------------------------------------------
 # Concatentate multiple files together
