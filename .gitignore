@@ -17,8 +17,6 @@
 *.c.[012]*.*
 *.dtb
 *.dtb.S
-*.dtbo
-*-dtb-hdr
 *.dwo
 *.elf
 *.gcno
